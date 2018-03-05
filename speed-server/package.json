@@ -1,0 +1,16 @@
+{
+  "name": "speed-server",
+  "version": "1.0.0",
+  "description": "Server for the 'speed' javascript game",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "keywords": [
+    "game",
+    "server",
+    "programming"
+  ],
+  "author": "Chris Browne <chris@item42.com>",
+  "license": "SEE LICENSE IN LICENSE"
+}

@@ -1,0 +1,47 @@
+{
+    // onStart is called once at the beginning of the race.  Right now it's of little use,
+    // but in the future the car will be configurable (e.g. adjusting tyre settings, fuel load, etc.)
+    // at which point it will be this function where you set up your car for the race
+    onStart: (car) => {
+
+    },
+
+    // onTick is called once every client-side 'tick'.
+    // note that you can of course try to circumvent the timing of the 'ticks' by
+    // using your own setTimeout inside this function or in onStart, but this
+    // will only cause obscure bugs in your code, because the server ticks at the same 
+    // rate as the client (actually ever so slightly slower, to account for network latency) 
+    // and will only use the *last* packet sent from the client to determine what to do on 
+    // the next tick.
+    onTick: (car) => {
+        // car object looks like this:
+        // {
+        //     velocity: Number, // in km/h
+        //     heading: Number, // in radians
+        //     sensors: {
+        //         frontLeft: SensorData,
+        //         front: SensorData,
+        //         frontRight: SensorData,
+        //         rear: SensorData
+        //     },
+        //     // @param n the amount of depression to give the accelerator pedal (0.0~1.0)
+        //     setAccelerator(Number n),
+        //     // @param n the amount of depression to give the brake pedal (0.0~1.0)
+        //     setBrake(Number n),
+        //     // @param n the angle to set the steering wheel to, 0.0 = straight, -1.0 = full lock left, 1.0 = full lock right
+        //     setSteeringAngle(Number n)
+        // }
+        // SensorData:
+        // {
+        //     obstacle: Number, // in meters
+        //     track: Number // also in meters
+        // }
+    },
+
+    // onFinish is called when you pass the finish line.  Since there's a "cooldown lap" in every race,
+    // you can use this function to put your car into 'showboat' mode and show off during the cooldown lap,
+    // or you can use it to record telemetry data to your own server, or whatever you want really.  Go nuts!
+    onFinish: (car) => {
+
+    }
+}
